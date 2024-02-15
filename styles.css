@@ -7,6 +7,9 @@
 }
 body {
   display: flex;
+  background-color: aqua;
+  color: navajowhite;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #staffGallery{
   width: 70vw;
@@ -17,4 +20,15 @@ body {
   width: 100%;
   height: auto;
   height: 300px;
+}
+.card {
+  background-color: white; /* Background color for the card */
+  border: 1px solid #ddd; /* Border to distinguish the card */
+  border-radius: 8px; /* Rounded corners for the card */
+  overflow: hidden; /* Ensures the content fits within the card */
+  margin: 10px; /* Space around the card */
+  width: calc(20vw - 20px); /* Width of the card, adjusting for margin */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow to lift the card off the page */
+  display: inline-block; /* Allows cards to sit side by side */
+  vertical-align: top; /* Aligns cards at the top */
 }
