@@ -1,20 +1,23 @@
 #logoBar{
   width: 30vw;
-  height: 100vh;
 }
 #siteLogo{
   width: 100%;
 }
 body {
   display: flex;
+  flex-direction: row;
   background-color: aqua;
-  color: navajowhite;
+  color: darkgoldenrod;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #staffGallery{
-  width: 70vw;
-  display: inherit;
-
+  display: flex;
+  justify-content: space-between; /* Evenly spaces the items within the container */
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  align-items: flex-start; /* Aligns items at the start of the container */
+  gap: 10px; /* Optional: Adds a gap between the flex items */
+  flex-grow: 1;
 }
 .galleryImage{
   width: 100%;
@@ -27,8 +30,43 @@ body {
   border-radius: 8px; /* Rounded corners for the card */
   overflow: hidden; /* Ensures the content fits within the card */
   margin: 10px; /* Space around the card */
-  width: calc(20vw - 20px); /* Width of the card, adjusting for margin */
+  width: calc(40vw - 5px); /* Width of the card, adjusting for margin */
+  height: 40vh;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow to lift the card off the page */
   display: inline-block; /* Allows cards to sit side by side */
   vertical-align: top; /* Aligns cards at the top */
+  flex: 1; /* Optional: Allows cards to grow to fill available space, can adjust as needed */
+  min-width: 200px; /* Minimum width of a card, adjust as needed to prevent cards from becoming too narrow */
+  min-height: 350px;
+  max-height: 550px;
+}
+.card img {
+  width: 100%; /* Ensures image covers the width of the card */
+  height: auto; /* Maintains the image's aspect ratio */
+}
+
+.card .name {
+  padding: 10px; /* Padding inside the card for the text */
+  color: #333; /* Text color for the name */
+  text-align: center; /* Centers the name text */
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  #logoBar {
+    width: 100%; /* Sidebar takes full width */
+    order: -1; /* Moves the sidebar to the top */
+  }
+
+  #staffGallery {
+    /* Adjustments if necessary for the gallery when the sidebar is on top */
+    width: 100%;
+  }
+
+  .card {
+    max-height: 450px;
+  }
 }
